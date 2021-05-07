@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Gec Commune</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <link rel="stylesheet" href="css/styles-reg.css">
+</head>
+<body>
+    <header>
+        <div class="logo">
+            <img src="images/black inst logo .png" alt="">
+        </div>
+    </header>
+    <!-- https://script.google.com/macros/s/AKfycbwGjaDLIIADMq1s3k-R-RiefYynSSes4_JyKowHxg/exec     -->
+
+    <div class="section"> 
+        <form id="submit-form" action="">
+            <h2 for="fname">Name</h2>
+            <input type="text" id="fname" name="firstname" placeholder="Your name.">
+            <br>  
+            <br>  
+            <h2 for="status">Semester</h2>
+            <select id="status" name="status">
+              <option value="S3">S2</option>
+              <option value="S5">S4</option>
+              <option value="S7">S6</option>
+            </select>
+            <br>  
+            <br> 
+            <h2 for="status">Department</h2>
+            <select id="department" name="department">
+                <option value="CS">Computer Science</option>
+                <option value="EC">Electronics and Communication </option>
+                <option value="Mechanical">Mechanical Engineering</option>
+                <option value="Arch">Architecture </option>
+                <option value="Chemical">Chemical Engineering</option>
+                <option value="EEE">Electrical Engineering</option>
+                <option value="Civil">Civil Engineering</option>
+              </select>
+
+            
+            <br>  
+            <br>
+            <h2 for="Mobile Number">Mobile Number</h2>
+            <input type="text" id="Mobile Number" name="MobileNumber" placeholder="Mobile number">
+            <br>  
+            <br>
+            <h2 for="email">E-mail ID</h2>
+            <input type="text" id="email" name="E-mail" placeholder="E- mail">
+
+
+    <div class="button">
+        <button class="btn claim"  ><h5>Register</h5></button>
+    </div>
+        
+        <div class="footer">
+            <img src="images/black inst logo .png" alt="">
+        </div>
+        <p>An SFI GEC Initiative</p>
+    </div>
+    <script>
+        $("#submit-form").submit((e)=>{
+            e.preventDefault()
+            $.ajax({
+                url:"https://script.google.com/macros/s/AKfycbwGjaDLIIADMq1s3k-R-RiefYynSSes4_JyKowHxg/exec",
+                data:$("#submit-form").serialize(),
+                method:"post",
+                success:function (response){
+                    alert("Form submitted successfully")
+                    // window.location.reload()
+                    window.location.href="success.html"
+                },
+                error:function (err){
+                    alert("Something Error")
+    
+                }
+            })
+        })
+    </script>
+
+</body>
+</html>
